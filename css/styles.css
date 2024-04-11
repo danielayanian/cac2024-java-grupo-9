@@ -1,0 +1,99 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/* La medida (width o height) que le demos al elemento sera igual a la suma
+    del contenido mas el padding mas el margin. Si ponemos content-box, la medida indicada sera solo
+    para el contenido, sin considerar padding ni margin */
+    font-family: "Inter", sans-serif;
+}
+
+/* Animacion para el icono del header */
+@keyframes tilt-n-move-shaking {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    25% { transform: translate(5px, 5px) rotate(5deg); }
+    50% { transform: translate(0, 0) rotate(0eg); }
+    75% { transform: translate(-5px, 5px) rotate(-5deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+/* Estilos para el header */
+.header {
+    background-color:#178F69;
+    
+    /*color:#ffffff;
+    height: 10vh;
+    position:sticky;
+    top: 0;
+    z-index:10;*/
+    .navigation{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-left:40px;
+        margin-right: 40px;
+        padding: 1.5rem 0;
+        .linkToInit{
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: 700;
+            font-size: 1.2rem;
+            /*animacion hover*/
+            &:hover{
+                animation: tilt-n-move-shaking 0.25s infinite;
+            }
+        }
+        .navigationList{
+            list-style: none;
+            display: flex;
+            align-items: center;
+            .itemList{
+                margin-right:20px;
+                .linkItem{
+                    text-decoration: none;
+                    color:#ffffff;
+                    font-weight: 700;
+                    font-size: 1.1rem;
+                    padding: 0.5rem 1rem;
+                    /* Agregar efecto de botón presionado */
+                    transition: transform 0.3s, box-shadow 0.3s;
+                    &:hover {
+                        transform: scale(0.95);
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+                        border-radius: 5px;
+                    }
+                }
+                .linkItem.iniciarSesion{
+                    background-color: #181914;
+                    color: white;
+                    
+                    border-radius: 5px;
+                     /* Agregar efecto de botón presionado */
+                     transition: transform 0.3s, box-shadow 0.3s;
+                     &:hover {
+                         background-color: #ecf006;
+                        /* transform: scale(0.95);
+                         box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);*/
+                     }
+                }
+            }
+        }
+    }
+}
+
+/* Estilos para el main */
+.main {
+    background-color: red;
+}
+
+/* Estilos para el footer */
+.footer {
+    color: red;
+}
+
+.navigationList {
+    display: inline-block;
+}
+
+.itemList {
+    display: inline-block;
+}
