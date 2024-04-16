@@ -107,7 +107,7 @@ body{
 /* Estilos para el header visto en el celu y en tablet */
 @media (max-width: 768px) {
     body {
-        overflow: hidden;
+        width: 100vw;
     }
     .header {
         height: initial;
