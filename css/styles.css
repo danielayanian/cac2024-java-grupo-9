@@ -468,7 +468,87 @@ body{
 }
 
 
-/* Estilos para el footer */
-.footer {
-    color: red;
+
+
+/* Estilos para el footer visto en el ordenador */
+.footer{
+    background-color: var(--verde);
+    color: var(--blanco-verdoso);
+    height: 15vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .navigationList{
+        list-style: none;
+        display: flex;
+        align-items: center;
+        .itemList{
+            margin-left:20px;
+            .linkItem{
+                text-decoration: none;
+                color: var(--blanco-verdoso);
+                font-weight: 700;
+                font-size: 1.1rem;
+                padding: 0.5rem 1rem;
+                border-radius: 5px;
+                &:hover {
+                    box-shadow: 0 0 10px rgba(210, 224, 5, 0.842);
+                }
+            }
+            .moviesAdmin{
+                background-color: var(--amarillo);
+                color: var(--verde);
+                &:hover {
+                    background-color: var(--naranja);
+                    color: var(--blanco-verdoso);
+                    box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+                    }
+            }
+        }
+    }
+}
+
+/* Estilos para el footer visto en el celu o tablet */
+@media (max-width: 768px) {
+    .footer{
+        height: initial;
+        padding-top:15px;
+        padding-bottom: 20px;
+        .navigationList{
+            flex-direction: column;
+            row-gap: 5px;
+            .itemList{
+                .linkItem{
+                    display: inline-block;
+                    font-size: 1rem;
+                }
+                .moviesAdmin {
+                    padding: 0.5rem 0.8rem;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+/* Estilos para el boton subir arriba visto en el ordenador */
+#subirArriba {
+    position: fixed;
+    bottom: 35px;
+    right: 35px;
+    color: var(--blanco-verdoso);
+    cursor: pointer;
+}
+
+/* Estilos para el boton subir arriba visto en el celu o tablet */
+@media (max-width: 768px) {
+    
+    #subirArriba {
+        bottom: 28px;
+    }
+
 }
