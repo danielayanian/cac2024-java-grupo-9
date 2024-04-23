@@ -1,12 +1,13 @@
-@import url("./root.css");/* Importo los estilos de root.css */
+/* Importo los estilos de root.css */
+@import url("./root.css");
 
+/* Los estilos del selector universal se aplican a todos los elementos del documento html */
 * {
-    margin: 0;/* margin de la pagina es cero */
-    padding: 0;/* padding de la pagina es cero */
-    box-sizing: border-box;/* La medida (width o height) que le demos al elemento sera igual a la suma
+    margin: 0;/* margin de todos los elementos sera cero por defecto */
+    padding: 0;/* padding de todos los elementos sera cero por defecto */
+    box-sizing: border-box;/* La medida (width o height) que le demos a un elemento sera igual a la suma
     del contenido mas el padding mas el margin. Si ponemos content-box, la medida indicada sera solo
     para el contenido, sin considerar padding ni margin */
-    font-family: "Inter", serif;/* Inter es una fuente de Google Fonts */
 }
 
 /* Animacion para el icono del header */
@@ -15,14 +16,14 @@
 		-webkit-transform: rotate(0deg);
         transform: rotateY(0deg);
 	}
-  50%{
+    50% {
 		-webkit-transform: rotate(180deg);
         transform: rotateY(180deg);
 	} 
 	to {
 		-webkit-transform: rotate(360deg);
         transform: rotateY(360deg);
-		}
+	}
 }
 
 /* Ancho del scrollbar */
@@ -49,514 +50,604 @@ body{
     background-color: var(--verde-claro);
 }
 
-/* Estilos para el header visto en el ordenador */
+/* Estilos para todos los dispositivos, empezando por el de pantalla mas chica */
+
+/* Inicio Header */
+
 .header {
-    background-color: var(--verde);
     height: 12vh;
+    width: 100vw;/* Por defecto es 100vw */
+    background-color: var(--verde);
     position: sticky;
     top: 0;
     z-index: 10;
-    .navigation {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-left: 4vw;
-        margin-right: 4vw;
-        padding: 1.5rem 0;
-        .linkToInit {
-            text-decoration: none;
-            color: var(--amarillo);
-            font-weight: 700;
-            font-size: 1.2rem;
-            /* Animation hover */
-            &:hover{
-                animation: header-animation 2s infinite;
-            }
-        }
-        .navigationList {
-            list-style: none;
-            align-items: center;
-            .itemList {
-                margin-right:20px;
-                display: inline-block;
-                .linkItem {
-                    text-decoration: none;
-                    color: var(--blanco-verdoso);
-                    font-weight: 700;
-                    font-size: 1.1rem;
-                    padding: 0.5rem 1rem;
-                    border-radius: 5px;
-                    &:hover {
-                        box-shadow: 0 0 10px rgba(210, 224, 5, 0.842);
-                    }
-                }
-                .linkItem.iniciarSesion {
-                    background-color: var(--amarillo);
-                    color: var(--verde);
-                    box-shadow: 0 0 0px rgba(210, 224, 5, 0.842);
-                    &:hover {
-                        background-color: var(--naranja);
-                        color: var(--blanco-verdoso);
-                     }
-                }
-            }
-        }
-    }
 }
 
-/* Estilos para el header visto en el celu y en tablet */
-@media (max-width: 768px) {
-    body {
-        width: 100vw;
-    }
-    .header {
-        height: initial;
-        .navigation {
-            margin-left:10px;
-            margin-right: 10px;
-            flex-direction: column;
-            row-gap: 20px;
-            .linkToInit {
-                font-size: 1.2rem;
-                font-weight:700;
-            }
-            .navigationList{
-                padding:initial;
-                .itemList{
-                    .linkItem{
-                        font-weight: 400;
-                        margin-right: initial;
-                        font-size: 1rem;
-                        padding: 0.2rem;
-                    }
-                }
-            }
-        }
-    }
+.navigation {
+    height: inherit;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Estilos para el main visto en el ordenador */
-.main {
-    .firstSection {
-        color:white;
-        background-image:linear-gradient(to right top, #16a0854a, #16a0854a), url(../assets/images/banner-bg.jpg);
-        background-size: cover;
-        background-position: center;
-        height: 90vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        .title{
-            font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-        .subtitle{
-            font-size: 2.2rem;
-            font-weight: 400;
-            margin-bottom: 1rem;
-        }
-        .regButton{
-            background-color: var(--verde);
-            color: var(--blanco-verdoso);
-            box-shadow: 0 0 0px rgba(210, 224, 5, 0.842);
-            border-radius: 5px;
-            text-decoration: none;
-            padding: 0.5rem 2rem;
-            font-size: 1.2rem;
-            font-weight: 700;
-            &:hover {
-                background-color: var(--verde);
-                color: var(--blanco-verdoso);
-                transform: scale(0.95);
-                box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-            }
-        }
-    }
-    
-    .search-container {
-        background-color: var(--naranja);
-        color:white;
-        height: 50vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        
-        .search-title{
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-        }
-        .search-form{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 1rem;
-            .search-input{
-                border: 2px solid white;
-                border-radius: 10px;
-                color: #ffffff;
-                font-size: 1.2rem;
-                height: 50px;
-                margin: 20px 0px;
-                outline: none;
-                padding: 0px 20px;
-                width: 500px;
-            }
-            .search-button{
-                background-color: var(--verde);
-                display: inline-block;
-                color: var(--blanco-verdoso);
-                height: 50px;
-                margin: 20px 10px;
-                padding:0 20px;
-                border-radius: 10px;
-                font-size: 1.2rem;
-                font-weight: 700;
-                border: 2px solid var(--blanco-verdoso);
-                text-align: center;
-                transition: transform 0.3s, box-shadow 0.3s;
-                &:hover {
-                    background-color: var(--verde);
-                    color: var(--blanco-verdoso);
-                    transform: scale(0.95);
-                    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-                 }
-            }
-        }
-       
-    }
-
-    .trends-movies{
-        width:80%;
-        margin: 0 auto;
-        text-align: center;
-        margin-top: 10px;
-        .trends-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 40px;
-            color: var(--naranja);
-        }
-        .movies{
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap:60px;
-            a {
-                text-decoration: none;
-                color: #ffffff;
-                .movie{
-                    width:200px;
-                    height: 300px;
-                    position: relative;
-                    overflow: hidden;
-                    border-radius: 10px;
-                    transition: all 0.5s ease;
-                   
-                    .trends-img {
-                        width: 100%;
-                        height: 100%;
-                        object-fit: cover;
-                        border-radius: 10px;
-                    }
-                  
-                    .movie-title {
-                        z-index: 2;
-                        position: absolute;
-                        text-align: center;
-                        top: 50%;
-                        left: 50%;
-                        max-width: 20rem;
-                        width: 100%;
-                        transform: translateY(-50%) translateX(-50%);
-                        h4 {
-                            font-size: 2rem;
-                            font-weight: bold;
-                            opacity: 0;
-                            margin-bottom: 0.5rem;
-                            letter-spacing: 0.1rem;
-                            transition: opacity 0.5s ease-in-out;
-    
-                        }
-                    }
-                    &:hover{
-                       box-shadow: 0 0 30px #9f3648cd;
-                       transform: scale(1.1);
-                      
-                    }
-                    &:hover h4 {
-                        opacity: 1;
-                      
-                    }
-                    &:hover::before {
-                        content: '';
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        border-radius: 10px;
-                        background-color: var(--naranja);
-                        z-index: 1;
-                    }
-                }
-            }
-          
-        }
-        .button {
-            border: 1px solid white;
-            box-sizing: content-box;
-            margin-top:50px;
-            margin-bottom:60px;
-            margin-left:20px;
-            background-color: var(--verde);
-            color: var(--blanco-verdoso);
-            padding: 0.5rem 1rem;
-            border-radius: 10px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            text-decoration: none;
-            transition: transform 0.3s, box-shadow 0.3s;
-            &:hover {
-                background-color: var(--verde);
-                color: var(--blanco-verdoso);
-                transform: scale(0.95);
-                box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-            }
-        }
-    }
-
-
-    .peliculasAclamadas{
-        width:80%;
-        margin: 0 auto;
-        text-align: center;
-        margin-top: 10px;
-        margin-bottom:60px;
-        .tituloSection{
-            color: var(--naranja);
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 40px;
-        }
-        .aclamadas{
-            overflow-x: scroll;
-            overflow-y: hidden;
-            width: 100%;
-            display: flex;
-            justify-content: flex-start;
-            align-items: flex-start;
-            padding: 0px 0px 40px 0px;
-            .peliculaItem{
-                border-radius: 25px;
-                width: 170px;
-                min-width: 170px;
-                font-size: 20px;
-                cursor: pointer;
-                margin-left: 30px;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-               
-                .imgAclamada{
-                    border-radius: 5%;
-                    width: 95%;
-                    height: 95%;
-                    object-fit: cover;
-                }
-                
-            }
-           
-        
-        }
-    }
-   
-}
-
-/* Estilos para el main visto en el celu y en tablet */
-@media (max-width: 768px) {
-    .main{
-        .firstSection{
-            height: 60vh;
-            background-image:linear-gradient(to right top, #16a0854a, #16a0854a), url(../assets/images/banner-bg-celu.jpg);
-            .title{
-                font-size: 2.5rem;
-            }
-            .subtitle{
-                font-size: 1.5rem;
-            }
-            .regButton{
-                font-weight: 400;
-                margin-right: initial;
-                font-size: 1rem;
-                padding: 0.2rem;
-            }
-        }
-
-        .search-container{
-            height: 30vh;
-            .search-title{
-                font-size: 1.6rem;
-                margin-bottom: 0rem;
-            }
-            .search-form{
-                .search-input{
-                    font-size: 1rem;
-                    height: 40px;
-                    width: 300px;
-                }
-                .search-button{
-                    height: 40px;
-                    padding:0 15px;
-                    font-size: 1rem;
-                }
-            }
-        }
-
-        .trends-movies {
-            width: 95%;
-            .trends-title {
-                font-size: 2rem;
-            }
-            .movies {
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-              
-                a {
-                    width: 80%;
-                    .movie {
-                        width: 100%;
-                        height: 500px;
-                       
-                        .movie-title {
-                            h4 {
-                                font-size: 1rem;
-                            }
-                        }
-                    }
-                }
-                &:hover{
-                    box-shadow:initial;
-                    transform: scale(0.9);
-                   
-                }
-               
-            }
-            .button{
-                padding: 0.6rem 0.8rem;
-                font-size: 0.8rem;
-                margin: 30px;
-            }
-        }
-
-
-        .peliculasAclamadas{
-            .tituloSection{
-                font-size: 2rem;
-            }
-            .aclamadas{
-                .peliculaItem{
-                    width: 150px;
-                    min-width: 150px;
-                    font-size: 15px;
-                    margin-left: 20px;
-                    .imgAclamada{
-                        width: 90%;
-                        height: 90%;
-                    }
-                }
-            }
-        }
-    }
-}
-
-
-
-
-/* Estilos para el footer visto en el ordenador */
-.footer{
-    background-color: var(--verde);
-    color: var(--blanco-verdoso);
-    height: 15vh;
+.linkToInit {
     display: flex;
     justify-content: center;
     align-items: center;
-    .navigationList{
-        list-style: none;
+    text-decoration: none;
+    color: var(--amarillo);
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.6rem;
+    font-family: "Inter", serif;/* Inter es una fuente de Google Fonts */
+    /* Agrego una animacion */
+    &:hover {
+        animation: header-animation 2s infinite;
+    }
+}
+
+.itemsList {
+    width: 100vw;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.itemLink {
+    text-decoration: none;
+    color: var(--blanco-verdoso);
+    border-radius: 0.2rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    font-family: "Inter", serif;/* Inter es una fuente de Google Fonts */
+    &:hover {
+        box-shadow: 0 0 10px rgba(210, 224, 5, 0.842);
+    }
+}
+
+.itemLink.initSesion {
+    background-color: var(--amarillo);
+    color: var(--verde);
+    &:hover {
+        background-color: var(--naranja);
+        color: var(--blanco-verdoso);
+        box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+     }
+}
+
+/* Fin Header */
+
+/* Inicio Main */
+
+.firstSection {
+    color:white;
+    background-image:linear-gradient(to right top, #16a0854a, #16a0854a), url(../assets/images/banner-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: "Inter", serif;
+}
+
+.title{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.subtitle{
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.regButton{
+    background-color: var(--verde);
+    color: var(--blanco-verdoso);
+    box-shadow: 0 0 0px rgba(210, 224, 5, 0.842);
+    border-radius: 0.2rem;
+    text-decoration: none;
+    padding: 0rem 0rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    &:hover {
+        background-color: var(--verde);
+        color: var(--blanco-verdoso);
+        transform: scale(0.95);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+}
+
+
+.search-container {
+    background-color: var(--naranja);
+    color:white;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-title{
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.search-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.search-input {
+    border: 2px solid white;
+    border-radius: 0.2rem;
+    color: white;
+    font-size: 1rem;
+    height: 7vh;
+    outline: none;
+    width: 50vw;
+}
+
+.search-button{
+    background-color: var(--verde);
+    display: inline-block;
+    color: var(--blanco-verdoso);
+    height: 7vh;
+    border-radius: 0.2rem;
+    font-size: 0.9rem;
+    font-weight: 400;
+    border: 2px solid var(--blanco-verdoso);
+    text-align: center;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    margin-left: 2rem;
+    transition: transform 0.3s, box-shadow 0.3s;
+    &:hover {
+        background-color: var(--verde);
+        color: var(--blanco-verdoso);
+        transform: scale(0.95);
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+     }
+}
+
+
+
+/* seguir desde aca hasta el final del main */
+
+.trends-movies{
+    width:80%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 10px;
+    .trends-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 40px;
+        color: var(--naranja);
+    }
+    .movies{
         display: flex;
-        align-items: center;
-        .itemList{
-            margin-left:20px;
-            .linkItem{
-                text-decoration: none;
-                color: var(--blanco-verdoso);
-                font-weight: 700;
-                font-size: 1.1rem;
-                padding: 0.5rem 1rem;
-                border-radius: 5px;
-                &:hover {
-                    box-shadow: 0 0 10px rgba(210, 224, 5, 0.842);
+        justify-content: center;
+        flex-wrap: wrap;
+        gap:60px;
+        a {
+            text-decoration: none;
+            color: #ffffff;
+            .movie{
+                width:200px;
+                height: 300px;
+                position: relative;
+                overflow: hidden;
+                border-radius: 10px;
+                transition: all 0.5s ease;
+               
+                .trends-img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 10px;
                 }
-            }
-            .moviesAdmin{
-                background-color: var(--amarillo);
-                color: var(--verde);
-                &:hover {
-                    background-color: var(--naranja);
-                    color: var(--blanco-verdoso);
-                    box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+              
+                .movie-title {
+                    z-index: 2;
+                    position: absolute;
+                    text-align: center;
+                    top: 50%;
+                    left: 50%;
+                    max-width: 20rem;
+                    width: 100%;
+                    transform: translateY(-50%) translateX(-50%);
+                    h4 {
+                        font-size: 2rem;
+                        font-weight: bold;
+                        opacity: 0;
+                        margin-bottom: 0.5rem;
+                        letter-spacing: 0.1rem;
+                        transition: opacity 0.5s ease-in-out;
+
                     }
+                }
+                &:hover{
+                   box-shadow: 0 0 30px #9f3648cd;
+                   transform: scale(1.1);
+                  
+                }
+                &:hover h4 {
+                    opacity: 1;
+                  
+                }
+                &:hover::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 10px;
+                    background-color: var(--naranja);
+                    z-index: 1;
+                }
             }
+        }
+      
+    }
+    .button {
+        border: 1px solid white;
+        box-sizing: content-box;
+        margin-top:50px;
+        margin-bottom:60px;
+        margin-left:20px;
+        background-color: var(--verde);
+        color: var(--blanco-verdoso);
+        padding: 0.5rem 1rem;
+        border-radius: 10px;
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-decoration: none;
+        transition: transform 0.3s, box-shadow 0.3s;
+        &:hover {
+            background-color: var(--verde);
+            color: var(--blanco-verdoso);
+            transform: scale(0.95);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
         }
     }
 }
 
-/* Estilos para el footer visto en el celu o tablet */
-@media (max-width: 768px) {
-    .footer{
-        height: initial;
-        padding-top:15px;
-        padding-bottom: 20px;
-        .navigationList{
+
+.peliculasAclamadas{
+    width:80%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom:60px;
+    .tituloSection{
+        color: var(--naranja);
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 40px;
+    }
+    .aclamadas{
+        overflow-x: scroll;
+        overflow-y: hidden;
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 0px 0px 40px 0px;
+        .peliculaItem{
+            border-radius: 25px;
+            width: 170px;
+            min-width: 170px;
+            font-size: 20px;
+            cursor: pointer;
+            margin-left: 30px;
+            display: flex;
             flex-direction: column;
-            row-gap: 5px;
-            .itemList{
-                .linkItem{
-                    display: inline-block;
-                    font-size: 1rem;
-                }
-                .moviesAdmin {
-                    padding: 0.5rem 0.8rem;
-                }
+            justify-content: space-between;
+           
+            .imgAclamada{
+                border-radius: 5%;
+                width: 95%;
+                height: 95%;
+                object-fit: cover;
             }
+            
         }
+       
+    
     }
 }
 
 
 
+/* Fin Main */
 
+/* Inicio Footer */
 
+.footer {
+    background-color: var(--verde);
+    height: 18vh;
+}
 
-/* Estilos para el boton subir arriba visto en el ordenador */
-#subirArriba {
+.footerNavigation {
+    height: inherit;
+}
+
+.footerNavigationList {
+    height: inherit;
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.linkItem {
+    text-decoration: none;
+    display: block;
+    color: var(--blanco-verdoso);
+    font-family: "Inter", serif;
+    font-size: 0.9rem;
+    font-weight: 400;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
+    padding-left: 1vw;
+    padding-right: 1vw;
+    border-radius: 0.2rem;
+    &:hover {
+        box-shadow: 0 0 10px rgba(210, 224, 5, 0.842);
+    }
+}
+
+.moviesAdmin {
+    background-color: var(--amarillo);
+    color: var(--verde);
+    &:hover {
+        background-color: var(--naranja);
+        color: var(--blanco-verdoso);
+        box-shadow: 0 0 0px rgba(0, 0, 0, 0);
+    }
+}
+
+/* Fin Footer */
+
+/* Estilos para el boton subir arriba */
+#buttonUP {
     position: fixed;
-    bottom: 35px;
-    right: 35px;
+    bottom: 2rem;
+    right: 2rem;
     color: var(--blanco-verdoso);
     cursor: pointer;
 }
 
-/* Estilos para el boton subir arriba visto en el celu o tablet */
+/* @media puede seguir con all, only screen u only print. Por defecto es all.
+Se aplicaran los estilos del @media si se cumple la condicion, como por ejemplo:
+(min-width: 768px) and (max-width: 1200px) */
+
+/* Estilos para dispositivos con ancho de entre 0px y 768px */
+/* MOBILE */
 @media (max-width: 768px) {
+
     
-    #subirArriba {
-        bottom: 28px;
+
+}
+
+/* Estilos para dispositivos con ancho de entre 769px y 5000px */
+/* ORDENADOR */
+@media (min-width:769px) and (max-width: 5000px) {
+
+    /* Inicio Header */
+
+    .navigation {
+        flex-direction: row;
+        height: inherit;
+        justify-content: space-between;
+        align-items: center;
     }
+
+    .linkToInit {
+        justify-content: left;
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-left: 4vw;
+        padding-top: 0.5rem;
+    }
+
+    .itemsList {
+        width: 50vw;
+        margin-right: 4vw;
+    }
+
+    .itemLink {
+        border-radius: 0.4rem;
+        font-size: 1.2rem;
+        font-weight: 700;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        padding-left: 1vw;
+        padding-right: 1vw;
+    }
+
+    /* Fin Header */
+
+    /* Inicio Main */
+
+    .firstSection {
+        height: 90vh;
+    }
+
+    .title{
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+    .subtitle{
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+    .regButton{
+        border-radius: 0.2rem;
+        font-size: 1.2rem;
+        font-weight: 700;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        padding-left: 1vw;
+        padding-right: 1vw;
+    }
+
+
+    .search-container {
+        height: 40vh;
+    }
+    
+    .search-title{
+        font-size: 2.3rem;
+    }
+    
+    .search-form {
+        margin-top: 2.3rem;
+    }
+    
+    .search-input {
+        border-radius: 0.5rem;
+        font-size: 1.2rem;
+        height: 7vh;
+    }
+    
+    .search-button{
+        height: 7vh;
+        border-radius: 0.5rem;
+        font-size: 1.2rem;
+        font-weight: 700;
+        border: 2px solid var(--blanco-verdoso);
+        padding-left: 1vw;
+        padding-right: 1vw;
+        margin-left: 2rem;
+    }
+
+
+    /* Fin Main */
+
+    /* Inicio Footer */
+
+    .footer {
+        height: 18vh;
+    }
+    
+    .footerNavigationList {
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+        flex-direction: row;
+    }
+    
+    .linkItem {
+        font-size: 1.2rem;
+        font-weight: 700;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        border-radius: 0.4rem;
+    }
+
+    /* Fin Footer */
+
+}
+
+/* Estilos para dispositivos con ancho de entre 1441px y 5000px */
+@media (min-width:1441px) and (max-width: 5000px) {
+
+}
+
+/* Estilos para dispositivos con ancho de entre 1281px y 1440px */
+@media (min-width:1281px) and (max-width: 1440px) {
+
+}
+
+/* Estilos para dispositivos con ancho de entre 1025px y 1280px */
+@media (min-width:1025px) and (max-width: 1280px) {
+
+}
+
+/* Estilos para dispositivos con ancho de entre 769px y 1024px */
+@media (min-width:769px) and (max-width: 1024px) {
+
+    .linkToInit {
+        font-size: 1rem;
+    }
+
+    .itemLink {
+        border-radius: 0.4rem;
+        font-size: 1rem;
+    }
+
+
+    .title{
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+    .subtitle{
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+    .regButton{
+        border-radius: 0.2rem;
+        font-size: 1rem;
+        font-weight: 700;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        padding-left: 1vw;
+        padding-right: 1vw;
+    }
+
+
+    
+    .footerNavigationList {
+        padding-top: 1vh;
+        padding-bottom: 1vh;
+    }
+    
+    .linkItem {
+        font-size: 1rem;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        padding-left: 1vw;
+        padding-right: 1vw;
+    }
+    
+}
+
+/* Estilos para dispositivos con ancho de entre 481px y 768px */
+@media (min-width:481px) and (max-width: 768px) {
+
+}
+/* Estilos para dispositivos con ancho de entre 321px y 480px */
+@media (min-width:321px) and (max-width: 480px) {
+
+}
+
+/* Estilos para dispositivos con ancho de entre 0px y 320px */
+@media (min-width:0px) and (max-width: 320px) {
+
+    /* Usando First Mobile, los estilos iniciales son los de este tamaño de dispositivo */
 
 }

@@ -3,31 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full Stack Java - TP Grupo 9</title>
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <title>TP Grupo 9 - CAC2024</title>
     <link rel="stylesheet" href="./css/styles.css">
+    <!-- Agrego script para poder usar iconos de Font Awesome -->
     <script src="https://kit.fontawesome.com/5269039df0.js" crossorigin="anonymous"></script>
+    <!-- Fuentes de Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,200..900;1,200..900&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="./favicon-32x32.ico" type="image/x-icon">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
 </head>
 <body>
+    
     <header class="header">
         <nav class="navigation">
-            <a class="linkToInit" href="#">
+            <a href="#" class="linkToInit">
                 <i class="fa-solid fa-film" aria-hidden="true"></i>
                 <span>TP Grupo 9 - Películas</span>
             </a>
-            <ul class="navigationList">
-                <li class="itemList"><a href="#tendencias" class="linkItem">Tendencias</a></li>
-                <li class="itemList"><a href="./pages/registrarse.html" class="linkItem">Registrarse</a></li>
-                <li class="itemList"><a href="./pages/iniciarSesion.html" class="linkItem iniciarSesion">Iniciar Sesión</a></li>
+            <ul class="itemsList">
+                <li class="item"><a href="#tendencias" class="itemLink">Tendencias</a></li>
+                <li class="item"><a href="./pages/registrarse.html" class="itemLink">Registrarse</a></li>
+                <li class="item"><a href="./pages/iniciarSesion.html" class="itemLink initSesion">Iniciar Sesión</a></li>
             </ul>
         </nav>
     </header>
-    
+
     <main id="main" class="main">
 
         <section data-aos="fade-right"  data-aos-duration="2000" class="firstSection">
@@ -233,17 +236,16 @@
     </main>
 
     <footer class="footer">
-        <nav class="navigation">
-            <ul class="navigationList">
+        <nav class="footerNavigation">
+            <ul class="footerNavigationList">
                 <li class="itemList"><a class="linkItem" href="">Términos y condiciones</a></li>
                 <li class="itemList"><a class="linkItem" href="">Preguntas frecuentes</a></li>
                 <li class="itemList"><a class="linkItem" href="">Ayuda</a></li>
-                <li class="itemList"><a class="linkItem moviesAdmin" href="">Administrador movies</a></li>
+                <li class="itemList"><a class="linkItem moviesAdmin" href="">Administrador películas</a></li>
             </ul>
         </nav>
-        <a href="javascript:void(0);" id="subirArriba">
-            
-            <i class="fa-solid fa-arrow-up-from-bracket fa-lg boton-arriba"></i>
+        <a href="javascript:void(0);" id="buttonUP">
+            <i class="fa-solid fa-arrow-up-from-bracket fa-lg"></i>
         </a>
     </footer>
 

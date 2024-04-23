@@ -1,3 +1,6 @@
+/* Los estilos del selector :root se aplican al documento HTML, pero no a los elementos del
+documento HTML. Este selector se utliza para inicializar variables. Es similar a usar html,
+pero :root tiene mayor especificidad (prioridad)  */
 :root {
     --verde: #16a085;
     --blanco-verdoso: #DAF7A6;

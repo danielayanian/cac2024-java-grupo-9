@@ -2,9 +2,9 @@
 /* Para el boton de subir arriba */
 $(document).ready(function(){ 
     $(window).scroll(function(){ 
-        $('#subirArriba').fadeIn(); 
+        $('#buttonUP').fadeIn(); 
     }); 
-    $('#subirArriba').click(function(){ 
+    $('#buttonUP').click(function(){ 
         $("html, body").animate({ scrollTop: 0 }, 600); 
         return false; 
     }); 
