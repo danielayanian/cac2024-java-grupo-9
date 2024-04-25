@@ -48,6 +48,7 @@
 
 body{
     background-color: var(--verde-claro);
+    overflow-x: hidden;
 }
 
 /* Estilos para todos los dispositivos, empezando por el de pantalla mas chica */
@@ -210,20 +211,22 @@ body{
     display: inline-block;
     color: var(--blanco-verdoso);
     height: 7vh;
-    border-radius: 0.2rem;
+    border-radius: 0.3rem;
     font-size: 0.9rem;
     font-weight: 400;
     border: 2px solid var(--blanco-verdoso);
     text-align: center;
-    padding-left: 1vw;
-    padding-right: 1vw;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
     margin-left: 2rem;
     transition: transform 0.3s, box-shadow 0.3s;
     &:hover {
         background-color: var(--verde);
         color: var(--blanco-verdoso);
         transform: scale(0.95);
-        box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+        box-shadow: 0 0 10px rgba(77, 72, 72, 0.3);
      }
 }
 
@@ -231,31 +234,31 @@ body{
 
 /* seguir desde aca hasta el final del main */
 
-.trends-movies{
-    width:80%;
+.trends-movies {
+    width:90vw;
     margin: 0 auto;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 4vh;
     .trends-title {
-        font-size: 2.5rem;
+        font-size: 1.4rem;
         font-weight: 700;
-        margin-bottom: 40px;
+        margin-bottom: 6vh;
         color: var(--naranja);
     }
-    .movies{
+    .movies {
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
-        gap:60px;
+        gap:6vh;
         a {
             text-decoration: none;
             color: #ffffff;
             .movie{
-                width:200px;
+                width:250px;
                 height: 300px;
                 position: relative;
                 overflow: hidden;
-                border-radius: 10px;
+                border-radius: 0.2rem;
                 transition: all 0.5s ease;
                
                 .trends-img {
@@ -311,15 +314,15 @@ body{
     .button {
         border: 1px solid white;
         box-sizing: content-box;
-        margin-top:50px;
-        margin-bottom:60px;
+        margin-top:6vh;
+        margin-bottom:6vh;
         margin-left:20px;
         background-color: var(--verde);
         color: var(--blanco-verdoso);
-        padding: 0.5rem 1rem;
-        border-radius: 10px;
-        font-size: 1.2rem;
-        font-weight: 700;
+        padding: 1vw 1vh;
+        border-radius: 0.3rem;
+        font-size: 0.9rem;
+        font-weight: 400;
         text-decoration: none;
         transition: transform 0.3s, box-shadow 0.3s;
         &:hover {
@@ -336,11 +339,11 @@ body{
     width:80%;
     margin: 0 auto;
     text-align: center;
-    margin-top: 10px;
-    margin-bottom:60px;
+    margin-top: 5vh;
+    margin-bottom:6vh;
     .tituloSection{
         color: var(--naranja);
-        font-size: 2.5rem;
+        font-size: 1.4rem;
         font-weight: 700;
         margin-bottom: 40px;
     }
@@ -362,21 +365,15 @@ body{
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-           
             .imgAclamada{
                 border-radius: 5%;
                 width: 95%;
                 height: 95%;
                 object-fit: cover;
-            }
-            
+            }   
         }
-       
-    
     }
 }
-
-
 
 /* Fin Main */
 
@@ -447,8 +444,6 @@ Se aplicaran los estilos del @media si se cumple la condicion, como por ejemplo:
 /* Estilos para dispositivos con ancho de entre 0px y 768px */
 /* MOBILE */
 @media (max-width: 768px) {
-
-    
 
 }
 
@@ -544,6 +539,27 @@ Se aplicaran los estilos del @media si se cumple la condicion, como por ejemplo:
         margin-left: 2rem;
     }
 
+
+    .trends-movies {
+        .trends-title {
+            font-size: 2.5rem;
+        }
+        .button {
+            height: 3vh;
+            border-radius: 0.5rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            padding-left: 1vw;
+            padding-right: 1vw;
+        }
+    }
+
+
+    .peliculasAclamadas{
+        .tituloSection{
+            font-size: 2.5rem;
+        }
+    }
 
     /* Fin Main */
 
